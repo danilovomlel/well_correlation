@@ -21,22 +21,27 @@ def las2csv(path):
         df_data.to_csv(save_path)
 
 
-def read_csv(path, depth="DEPTH", channel="GR", filter_nan=True):
+
+def read_csv(path, depth="DEPTH", channel="GR", filter_nan=True, wells=[""]): #Chance desse wells bugar
 
     data = dict()
 
-    for file in os.listdir(path):
-        
-        file_path = os.path.join(path, file)
-        well = file.split('.')[0]
-        df = pd.read_csv(file_path)[ [depth, channel] ] #TODO melhorar se necessario
-
-        #Transform de 0.1inch para metros
-        if df[depth].mean() > 7000:
-            df[depth] = df[depth] / 393.7 #0.1inch to M
-
-        if filter_nan:
-            df = df[df > -90] #FILTRA VALORES NEGATIVOS
+    for well in wells:
+        for file in os.listdir(path):
             
-        data[well] = df
+            if not(file.startswith(well)):
+                continue
+
+            file_path = os.path.join(path, file)
+            well = file.split('.')[0]
+            df = pd.read_csv(file_path)[ [depth, channel] ] #TODO melhorar se necessario
+
+            #Transform de 0.1inch para metros
+            if df[depth].mean() > 7000:
+                df[depth] = df[depth] / 393.7 #0.1inch to M
+
+            if filter_nan:
+                df = df[df > -90] #FILTRA VALORES NEGATIVOS
+                
+            data[well] = df
     return data
