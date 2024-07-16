@@ -10,7 +10,7 @@ def interpolate_wells(dict_data, step=0.2, depth="DEPTH"):
 
     for well, df in dict_data.items():
 
-        curr_depth = df[depth]
+        curr_depth = df[depth].sort_values()
         new_depth = new_depth_arange(curr_depth, step)
         new_data = pd.DataFrame({depth: new_depth})
 
