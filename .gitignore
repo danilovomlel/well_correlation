@@ -1,6 +1,7 @@
 # Folders
 Outros/
 data/well_logs
+Resultados/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

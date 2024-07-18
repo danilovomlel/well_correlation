@@ -1,0 +1,20 @@
+
+MAJOR_LL_SUL = [
+    '8-SEP-2-RJS',
+    '9-LL-19-RJS',
+    '3-BRSA-795-RJS',
+    '3-BRSA-1120-RJS',
+    '3-BRSA-821-RJS',
+    '8-LL-62D-RJS',
+    '4-BRSA-1047-RJS',
+    '8-LL-42D-RJS',
+    '9-LL-12D-RJS',
+    '9-LL-16-RJS',
+    '3-BRSA-854-RJS',
+    '9-LL-30-RJS',
+    '1-BRSA-369A-RJS',
+    '9-BRSA-908D-RJS',
+    '9-BRSA-716-RJS',
+    '3-BRSA-883-RJS',
+    '7-LL-46-RJS',
+]
